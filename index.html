@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lead Capture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Hello World!</h1>
-  <p>This is my page.</p>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-6">
+
+    <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Get in touch</h2>
+        <p class="text-gray-600 mb-6 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+
+        <!-- Netlify Form Integration -->
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            
+            <!-- Hidden field for anti-spam (Honeypot) -->
+            <p class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Full Name</label>
+                <input type="text" name="name" required 
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" name="email" required 
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea name="message" rows="4" required 
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+            </div>
+
+            <button type="submit" 
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200">
+                Send Message
+            </button>
+        </form>
+    </div>
+
 </body>
 </html>
